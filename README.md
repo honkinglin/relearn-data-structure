@@ -1,7 +1,7 @@
 # Relearn Data Structure
 
 - [x] Arrays
-- Stacks and Queues
+- [x] Stacks and Queues
 - Linked Lists
 - Recursion
 - Binary Search Tree
