@@ -59,7 +59,7 @@ public class MyArray<E> {
 
     private void resize(int newCapacity) {
         E[] newData = (E[])new Object[newCapacity];
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 0; i < size; i++) {
             newData[i] = data[i];
         }
         data = newData;
@@ -71,6 +71,16 @@ public class MyArray<E> {
             throw new IllegalArgumentException("Get failed. Index is illegal.");
 
         return data[index];
+    }
+
+    // Get the last element
+    public E getLast() {
+        return get(size - 1);
+    }
+
+    // Get the first element
+    public E getFirst() {
+        return get(0);
     }
 
     // Set the element at the index
@@ -141,13 +151,13 @@ public class MyArray<E> {
         StringBuilder res = new StringBuilder();
         res.append(String.format("Array: size = %d , capacity = %d\n", size, data.length));
 
-        res.append('[');
+        res.append("[");
         for (int i = 0; i < size; i++) {
             res.append(data[i]);
             if (i != size - 1)
                 res.append(", ");
         }
-        res.append(']');
+        res.append("]");
         return res.toString();
     }
 
