@@ -1,4 +1,4 @@
-# relearn-data-structure
+# Relearn Data Structure
 
 - [x] Arrays
 - Stacks and Queues
