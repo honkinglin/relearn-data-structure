@@ -1,40 +1,40 @@
 package StackAndQueue;
 
-import Arrays.Array;
+import Arrays.MyArray;
 
-public class ArrayStack<E> {
-    Array<E> array;
+public class MyArrayStack<E> {
+    MyArray<E> myArray;
 
-    public ArrayStack(int capacity) {
-        array = new Array<>(capacity);
+    public MyArrayStack(int capacity) {
+        myArray = new MyArray<>(capacity);
     }
 
-    public ArrayStack() {
-        array = new Array<>();
+    public MyArrayStack() {
+        myArray = new MyArray<>();
     }
 
     public int getSize() {
-        return array.getSize();
+        return myArray.getSize();
     }
 
     public boolean isEmpty() {
-        return array.isEmpty();
+        return myArray.isEmpty();
     }
 
     public int getCapacity() {
-        return array.getCapacity();
+        return myArray.getCapacity();
     }
 
     public void push(E e) {
-        array.addLast(e);
+        myArray.addLast(e);
     }
 
     public E pop() {
-        return array.removeLast();
+        return myArray.removeLast();
     }
 
     public E peek() {
-        return array.getLast();
+        return myArray.getLast();
     }
 
     // Override the toString method
@@ -43,9 +43,9 @@ public class ArrayStack<E> {
         StringBuilder res = new StringBuilder();
         res.append("Stack: ");
         res.append("[");
-        for (int i = 0; i < array.getSize(); i++) {
-            res.append(array.get(i));
-            if (i != array.getSize() - 1)
+        for (int i = 0; i < myArray.getSize(); i++) {
+            res.append(myArray.get(i));
+            if (i != myArray.getSize() - 1)
                 res.append(", ");
         }
         res.append("] top");
@@ -54,7 +54,7 @@ public class ArrayStack<E> {
     }
 
     public static void main(String[] args) {
-        ArrayStack<Integer> stack = new ArrayStack<>();
+        MyArrayStack<Integer> stack = new MyArrayStack<>();
         for (int i = 0; i < 5; i++) {
             stack.push(i);
             System.out.println(stack);

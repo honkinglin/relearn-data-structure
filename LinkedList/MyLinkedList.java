@@ -1,6 +1,6 @@
-package LinkedLists;
+package LinkedList;
 
-public class LinkedList<E> {
+public class MyLinkedList<E> {
     private class Node {
         E e;
         Node next;
@@ -28,7 +28,7 @@ public class LinkedList<E> {
     private Node dummyHead;
     private int size;
 
-    public LinkedList() {
+    public MyLinkedList() {
         dummyHead = new Node(null, null);
         size = 0;
     }
@@ -142,22 +142,22 @@ public class LinkedList<E> {
     }
 
     public static void main(String[] args) {
-        LinkedList<Integer> linkedList = new LinkedList<>();
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
         for (int i = 0; i < 5; i++) {
-            linkedList.addFirst(i);
-            System.out.println(linkedList);
+            myLinkedList.addFirst(i);
+            System.out.println(myLinkedList);
         }
 
-        linkedList.add(2, 666);
-        System.out.println(linkedList);
+        myLinkedList.add(2, 666);
+        System.out.println(myLinkedList);
 
-        linkedList.remove(2);
-        System.out.println(linkedList);
+        myLinkedList.remove(2);
+        System.out.println(myLinkedList);
 
-        linkedList.removeFirst();
-        System.out.println(linkedList);
+        myLinkedList.removeFirst();
+        System.out.println(myLinkedList);
 
-        linkedList.removeLast();
-        System.out.println(linkedList);
+        myLinkedList.removeLast();
+        System.out.println(myLinkedList);
     }
 }

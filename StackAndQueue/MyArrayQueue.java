@@ -1,48 +1,48 @@
 package StackAndQueue;
 
-import Arrays.Array;
+import Arrays.MyArray;
 
-public class ArrayQueue<E> {
-    private Array<E> array;
+public class MyArrayQueue<E> {
+    private MyArray<E> myArray;
 
     // Constructor, pass in the capacity of the array
-    public ArrayQueue(int capacity) {
-        array = new Array<>(capacity);
+    public MyArrayQueue(int capacity) {
+        myArray = new MyArray<>(capacity);
     }
 
     // Default constructor, set the capacity to 10
-    public ArrayQueue() {
-        array = new Array<>();
+    public MyArrayQueue() {
+        myArray = new MyArray<>();
     }
 
     // Get the number of elements in the queue
     public int getSize() {
-        return array.getSize();
+        return myArray.getSize();
     }
 
     // Check if the queue is empty
     public boolean isEmpty() {
-        return array.isEmpty();
+        return myArray.isEmpty();
     }
 
     // Get the capacity of the array
     public int getCapacity() {
-        return array.getCapacity();
+        return myArray.getCapacity();
     }
 
     // Add an element to the end of the queue
     public void enqueue(E e) {
-        array.addLast(e);
+        myArray.addLast(e);
     }
 
     // Remove an element from the beginning of the queue
     public E dequeue() {
-        return array.removeFirst();
+        return myArray.removeFirst();
     }
 
     // Get the front element of the queue
     public E getFront() {
-        return array.getFirst();
+        return myArray.getFirst();
     }
 
     @Override
@@ -50,9 +50,9 @@ public class ArrayQueue<E> {
         StringBuilder res = new StringBuilder();
         res.append("Queue: ");
         res.append("front [");
-        for (int i = 0; i < array.getSize(); i++) {
-            res.append(array.get(i));
-            if (i != array.getSize() - 1)
+        for (int i = 0; i < myArray.getSize(); i++) {
+            res.append(myArray.get(i));
+            if (i != myArray.getSize() - 1)
                 res.append(", ");
         }
         res.append("] tail");
@@ -60,7 +60,7 @@ public class ArrayQueue<E> {
     }
 
     public static void main(String[] args) {
-        ArrayQueue<Integer> queue = new ArrayQueue<>();
+        MyArrayQueue<Integer> queue = new MyArrayQueue<>();
         for (int i = 0; i < 10; i++) {
             queue.enqueue(i);
             System.out.println(queue);
