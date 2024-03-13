@@ -1,18 +1,18 @@
 package StackAndQueue;
 
-import Arrays.MyArray;
+import Arrays.Array;
 
-public class MyArrayQueue<E> {
-    private MyArray<E> array;
+public class ArrayQueue<E> {
+    private Array<E> array;
 
     // Constructor, pass in the capacity of the array
-    public MyArrayQueue(int capacity) {
-        array = new MyArray<>(capacity);
+    public ArrayQueue(int capacity) {
+        array = new Array<>(capacity);
     }
 
     // Default constructor, set the capacity to 10
-    public MyArrayQueue() {
-        array = new MyArray<>();
+    public ArrayQueue() {
+        array = new Array<>();
     }
 
     // Get the number of elements in the queue
@@ -60,7 +60,7 @@ public class MyArrayQueue<E> {
     }
 
     public static void main(String[] args) {
-        MyArrayQueue<Integer> queue = new MyArrayQueue<>();
+        ArrayQueue<Integer> queue = new ArrayQueue<>();
         for (int i = 0; i < 10; i++) {
             queue.enqueue(i);
             System.out.println(queue);
