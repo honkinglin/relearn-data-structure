@@ -3,7 +3,6 @@
 - [x] Arrays
 - [x] Stacks and Queues
 - [x] Linked Lists
-- Recursion
 - Binary Search Tree
 - Set and Map
 - Heap and Priority Queue
