@@ -1,6 +1,7 @@
 package BinarySearchTree;
 
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -141,13 +142,13 @@ public class MyBST<E extends Comparable<E>> {
         if (size == 0)
             throw new IllegalArgumentException("BST is empty.");
 
-        return minimum(root.left);
+        return minimum(root.left).e;
     }
 
-    private E minimum(Node node) {
-        if (node.left == null) return node.e;
+    private Node minimum(Node node) {
+        if (node.left == null) return node;
 
-        return node.left.e;
+        return node.left;
     }
 
     public E removeMin() {
@@ -174,13 +175,13 @@ public class MyBST<E extends Comparable<E>> {
         if (size == 0)
             throw new IllegalArgumentException("BST is empty.");
 
-        return maxmum(root.right);
+        return maxmum(root.right).e;
     }
 
-    private E maxmum(Node node) {
-        if (node.right == null) return node.e;
+    private Node maxmum(Node node) {
+        if (node.right == null) return node;
 
-        return node.right.e;
+        return node.right;
     }
 
     public E removeMax() {
@@ -201,6 +202,48 @@ public class MyBST<E extends Comparable<E>> {
 
         node.right = removeMax(node.right);
         return node;
+    }
+
+    public void remove(E e) {
+        root = remove(root, e);
+    }
+
+    private Node remove(Node node, E e) {
+        if (node == null) return null;
+
+        if (node.e.compareTo(e) < 0) {
+            node.left = remove(node.left, e);
+            return node;
+        } else if (node.e.compareTo(e) > 0) {
+            node.right = remove(node.right, e);
+            return node;
+        } else { // node.e == e
+            // find the minimum of the right subtree
+            // set the minimum of the right subtree to the node
+            // remove the minimum of the right subtree
+            // return the node
+            if (node.left == null) {
+                Node rightNode = node.right;
+                node.right = null;
+                size --;
+                return rightNode;
+            }
+
+            if (node.right == null) {
+                Node leftNode = node.left;
+                node.left = null;
+                size --;
+                return leftNode;
+            }
+
+            Node successor = minimum(node.right);
+            successor.right = removeMin(node.right);
+            successor.left = node.left;
+
+            node.left = node.right = null;
+
+            return successor;
+        }
     }
 
     @Override
