@@ -16,6 +16,14 @@ public class MyArray<E> {
         this(10);
     }
 
+    public MyArray(E[] arr) {
+        data = (E[])new Object[arr.length];
+        for (int i = 0; i < arr.length; i++)
+            data[i] = arr[i];
+
+        size = arr.length;
+    }
+
     // Get the number of elements in the array
     public int getSize() {
         return size;
@@ -144,6 +152,15 @@ public class MyArray<E> {
         int index = find(e);
         if (index != -1)
             remove(index);
+    }
+
+    public void swap(int i, int j) {
+        if (i < 0 || i >= size || j < 0 || j >= size)
+            throw new IllegalArgumentException("Index is illegal.");
+
+        E t = data[i];
+        data[i] = data[j];
+        data[j] = t;
     }
 
     @Override
