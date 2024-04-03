@@ -85,6 +85,34 @@ public class MySegmentTree<E> {
         return merger.merge(leftResult , rightResult);
     }
 
+    // Set the value of the index to e
+    public void set(int index, E e) {
+        if (index < 0 || index >= data.length)
+            throw new IllegalArgumentException("Index is illegal.");
+
+        data[index] = e;
+        set(0, 0, data.length - 1, index, e);
+    }
+
+    // Set the value of the segment tree in the range [l, r] to e
+    private void set(int treeIndex, int l, int r, int index, E e) {
+        if (l == r) {
+            tree[treeIndex] = e;
+            return;
+        }
+
+        int mid = l + (r - l) / 2;
+        int leftTreeIndex = leftChild(treeIndex);
+        int rightTreeIndex = rightChild(treeIndex);
+
+        if (index >= mid + 1)
+            set(rightTreeIndex, mid + 1, r, index, e);
+        else // index <= mid
+            set(leftTreeIndex, l, mid, index, e);
+
+        tree[treeIndex] = merger.merge(tree[leftTreeIndex], tree[rightTreeIndex]);
+    }
+
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
@@ -111,5 +139,8 @@ public class MySegmentTree<E> {
         System.out.println(segTree.query(0, 2));
         System.out.println(segTree.query(2, 5));
         System.out.println(segTree.query(0, 5));
+
+        segTree.set(0, 1);
+        System.out.println(segTree.query(0, 2));
     }
 }
