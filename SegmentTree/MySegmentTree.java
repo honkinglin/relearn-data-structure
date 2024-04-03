@@ -5,6 +5,10 @@ public class MySegmentTree<E> {
     private E[] tree;
     private Merger<E> merger;
 
+    private interface Merger<E> {
+        E merge(E a, E b);
+    }
+
     public MySegmentTree(E[] arr, Merger<E> merger) {
         this.merger = merger;
 
@@ -54,6 +58,33 @@ public class MySegmentTree<E> {
         return 2 * index + 2;
     }
 
+    // Get the value of the segment tree in the range [queryL, queryR]
+    public E query(int queryL, int queryR) {
+        if (queryL < 0 || queryL >= data.length || queryR < 0 || queryR >= data.length || queryL > queryR)
+            throw new IllegalArgumentException("Index is illegal. ");
+
+        return query(0, 0, data.length - 1, queryL, queryR);
+    }
+
+    // Get the value of the segment tree in the range [l, r]
+    private E query(int treeIndex, int l, int r, int queryL, int queryR) {
+        if (l == queryL && r == queryR)
+            return tree[treeIndex];
+
+        int mid = l + (r - l) / 2;
+        int leftTreeIndex = leftChild(treeIndex);
+        int rightTreeIndex = rightChild(treeIndex);
+
+        if (queryL >= mid + 1)
+            return query(rightTreeIndex, mid + 1, r, queryL, queryR);
+        else if (queryR <= mid)
+            return query(leftTreeIndex, l, mid, queryL, queryR);
+
+        E leftResult = query(leftTreeIndex, l, mid, queryL, mid);
+        E rightResult = query(rightTreeIndex, mid + 1, r, mid + 1, queryR);
+        return merger.merge(leftResult , rightResult);
+    }
+
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
@@ -77,5 +108,8 @@ public class MySegmentTree<E> {
 
         System.out.println(segTree.getSize());
         System.out.println(segTree.get(0));
+        System.out.println(segTree.query(0, 2));
+        System.out.println(segTree.query(2, 5));
+        System.out.println(segTree.query(0, 5));
     }
 }
