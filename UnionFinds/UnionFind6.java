@@ -1,4 +1,4 @@
-package UnionFind;
+package UnionFinds;
 
 public class UnionFind6 implements UF {
     private int[] parent; // The parent of the element i is parent[i]

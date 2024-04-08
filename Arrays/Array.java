@@ -1,22 +1,22 @@
 package Arrays;
 
-public class MyArray<E> {
+public class Array<E> {
     private E[] data;
 
     private int size;
 
     // Constructor, pass in the capacity of the array
-    public MyArray(int capacity) {
+    public Array(int capacity) {
         data = (E[]) new Object[capacity];
         size = 0;
     }
 
     // Default constructor, set the capacity to 10
-    public MyArray() {
+    public Array() {
         this(10);
     }
 
-    public MyArray(E[] arr) {
+    public Array(E[] arr) {
         data = (E[])new Object[arr.length];
         for (int i = 0; i < arr.length; i++)
             data[i] = arr[i];
@@ -179,7 +179,7 @@ public class MyArray<E> {
     }
 
     public static void main(String[] args) {
-        MyArray<Integer> arr = new MyArray<Integer>();
+        Array<Integer> arr = new Array<Integer>();
         for (int i = 0; i < 10; i++)
             arr.addLast(i);
 

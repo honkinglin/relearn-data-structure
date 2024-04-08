@@ -1,12 +1,12 @@
 package SetAndMap;
 
-import BinarySearchTree.MyBST;
+import BinarySearchTree.BST;
 
-public class MyBSTSet<E extends Comparable<E>> {
-    private MyBST<E> bst;
+public class BSTSet<E extends Comparable<E>> {
+    private BST<E> bst;
 
-    public MyBSTSet() {
-        bst = new MyBST<>();
+    public BSTSet() {
+        bst = new BST<>();
     }
 
     public int getSize() {

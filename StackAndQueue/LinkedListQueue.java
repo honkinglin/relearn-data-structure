@@ -1,6 +1,6 @@
 package StackAndQueue;
 
-public class MyLinkedListQueue<E> {
+public class LinkedListQueue<E> {
     private class Node {
         public E e;
         public Node next;
@@ -26,7 +26,7 @@ public class MyLinkedListQueue<E> {
     private Node head, tail;
     private int size;
 
-    public MyLinkedListQueue() {
+    public LinkedListQueue() {
         head = null;
         tail = null;
         size = 0;
@@ -89,7 +89,7 @@ public class MyLinkedListQueue<E> {
     }
 
     public static void main(String[] args) {
-        MyLinkedListQueue<Integer> queue = new MyLinkedListQueue<>();
+        LinkedListQueue<Integer> queue = new LinkedListQueue<>();
         for (int i = 0; i < 10; i++) {
             queue.enqueue(i);
             System.out.println(queue);

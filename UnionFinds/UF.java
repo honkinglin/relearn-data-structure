@@ -1,4 +1,4 @@
-package UnionFind;
+package UnionFinds;
 
 public interface UF {
     int getSize();

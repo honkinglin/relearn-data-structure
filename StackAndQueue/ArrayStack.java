@@ -1,16 +1,16 @@
 package StackAndQueue;
 
-import Arrays.MyArray;
+import Arrays.Array;
 
-public class MyArrayStack<E> {
-    MyArray<E> myArray;
+public class ArrayStack<E> {
+    Array<E> myArray;
 
-    public MyArrayStack(int capacity) {
-        myArray = new MyArray<>(capacity);
+    public ArrayStack(int capacity) {
+        myArray = new Array<>(capacity);
     }
 
-    public MyArrayStack() {
-        myArray = new MyArray<>();
+    public ArrayStack() {
+        myArray = new Array<>();
     }
 
     public int getSize() {
@@ -54,7 +54,7 @@ public class MyArrayStack<E> {
     }
 
     public static void main(String[] args) {
-        MyArrayStack<Integer> stack = new MyArrayStack<>();
+        ArrayStack<Integer> stack = new ArrayStack<>();
         for (int i = 0; i < 5; i++) {
             stack.push(i);
             System.out.println(stack);

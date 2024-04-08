@@ -1,11 +1,10 @@
 package BinarySearchTree;
 
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
 
-public class MyBST<E extends Comparable<E>> {
+public class BST<E extends Comparable<E>> {
     private class Node {
         public E e;
         public Node left, right;
@@ -20,7 +19,7 @@ public class MyBST<E extends Comparable<E>> {
     private Node root;
     private int size;
 
-    public MyBST() {
+    public BST() {
         root = null;
         size = 0;
     }
@@ -272,7 +271,7 @@ public class MyBST<E extends Comparable<E>> {
     }
 
     public static void main(String[] args) {
-        MyBST<Integer> bst = new MyBST<>();
+        BST<Integer> bst = new BST<>();
         int[] nums = {5, 3, 6, 8, 4, 2};
         for (int num : nums)
             bst.add(num);

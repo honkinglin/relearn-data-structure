@@ -1,4 +1,4 @@
-package UnionFind;
+package UnionFinds;
 
 public class UnionFind1 implements UF {
     private int[] id;

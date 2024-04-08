@@ -1,10 +1,10 @@
 package HeapAndPriorityQueue;
 
-public class MyPriorityQueue<E extends Comparable<E>> {
-    private MyMaxHeap<E> maxHeap;
+public class PriorityQueue<E extends Comparable<E>> {
+    private MaxHeap<E> maxHeap;
 
-    public MyPriorityQueue() {
-        maxHeap = new MyMaxHeap<>();
+    public PriorityQueue() {
+        maxHeap = new MaxHeap<>();
     }
 
     public int getSize() {

@@ -1,6 +1,6 @@
-package LinkedList;
+package LinkedLists;
 
-public class MyLinkedList<E> {
+public class LinkedList2<E> {
     private class Node {
         E e;
         Node next;
@@ -24,12 +24,11 @@ public class MyLinkedList<E> {
         }
     }
 
-    // virtual head node
-    private Node dummyHead;
+    private Node head;
     private int size;
 
-    public MyLinkedList() {
-        dummyHead = new Node(null, null);
+    public LinkedList2() {
+        head = null;
         size = 0;
     }
 
@@ -46,17 +45,25 @@ public class MyLinkedList<E> {
         if (index < 0 || index > size)
             throw new IllegalArgumentException("Add failed. Illegal index.");
 
-        Node prev = dummyHead;
-        for (int i = 0; i < index; i++)
-            prev = prev.next;
+        if (index == 0) {
+            addFirst(e);
+        } else {
+            Node prev = head;
+            // find the previous node of index
+            for (int i = 0; i < index - 1; i++)
+                prev = prev.next;
 
-        prev.next = new Node(e, prev.next);
-        size++;
+            prev.next = new Node(e, prev.next);
+            size++;
+        }
+
     }
 
     // add element at first
     public void addFirst(E e) {
-        add(0, e);
+        Node newNode = new Node(e, head);
+        head = newNode;
+        size++;
     }
 
     public void addLast(E e) {
@@ -68,7 +75,7 @@ public class MyLinkedList<E> {
         if (index < 0 || index > size)
             throw new IllegalArgumentException("Get failed. Illegal index.");
 
-        Node cur = dummyHead.next;
+        Node cur = head;
         for (int i = 0; i < index; i++)
             cur = cur.next;
 
@@ -88,7 +95,7 @@ public class MyLinkedList<E> {
         if (index < 0 || index > size)
             throw new IllegalArgumentException("Set failed. Illegal index.");
 
-        Node cur = dummyHead.next;
+        Node cur = head;
         for (int i = 0; i < index; i++)
             cur = cur.next;
 
@@ -96,7 +103,7 @@ public class MyLinkedList<E> {
     }
 
     public boolean contains(E e) {
-        Node cur = dummyHead.next;
+        Node cur = head;
         while (cur != null) {
             if (cur.e.equals(e))
                 return true;
@@ -106,8 +113,9 @@ public class MyLinkedList<E> {
     }
 
     public E remove(int index) {
-        Node prev = dummyHead;
-        for (int i = 0; i < index; i++)
+        Node prev = head;
+        // find the previous node of index
+        for (int i = 0; i < index - 1; i++)
             prev = prev.next;
 
         Node retNode = prev.next;
@@ -126,54 +134,36 @@ public class MyLinkedList<E> {
         return remove(size - 1);
     }
 
-    public void removeElement(E e) {
-        Node prev = dummyHead;
-        while (prev.next != null) {
-            if (prev.next.e.equals(e))
-                break;
-            prev = prev.next;
-        }
-
-        if (prev.next != null) {
-            Node delNode = prev.next;
-            prev.next = delNode.next;
-            delNode.next = null;
-            size--;
-        }
-    }
-
     public String toString() {
         StringBuilder res = new StringBuilder();
 
-        Node cur = dummyHead.next;
+        Node cur = head;
         while (cur != null) {
             res.append(cur + "->");
             cur = cur.next;
         }
-//        for (Node cur = dummyHead.next; cur != null; cur = cur.next)
-//            res.append(cur + "->");
 
         res.append("NULL");
         return res.toString();
     }
 
     public static void main(String[] args) {
-        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        LinkedList<Integer> linkedList = new LinkedList<>();
         for (int i = 0; i < 5; i++) {
-            myLinkedList.addFirst(i);
-            System.out.println(myLinkedList);
+            linkedList.addFirst(i);
+            System.out.println(linkedList);
         }
 
-        myLinkedList.add(2, 666);
-        System.out.println(myLinkedList);
+        linkedList.add(2, 666);
+        System.out.println(linkedList);
 
-        myLinkedList.remove(2);
-        System.out.println(myLinkedList);
+        linkedList.remove(2);
+        System.out.println(linkedList);
 
-        myLinkedList.removeFirst();
-        System.out.println(myLinkedList);
+        linkedList.removeFirst();
+        System.out.println(linkedList);
 
-        myLinkedList.removeLast();
-        System.out.println(myLinkedList);
+        linkedList.removeLast();
+        System.out.println(linkedList);
     }
 }

@@ -1,6 +1,6 @@
-package SegmentTree;
+package SegmentTrees;
 
-public class MySegmentTree<E> {
+public class SegmentTree<E> {
     private E[] data;
     private E[] tree;
     private Merger<E> merger;
@@ -9,7 +9,7 @@ public class MySegmentTree<E> {
         E merge(E a, E b);
     }
 
-    public MySegmentTree(E[] arr, Merger<E> merger) {
+    public SegmentTree(E[] arr, Merger<E> merger) {
         this.merger = merger;
 
         data = (E[]) new Object[arr.length];
@@ -132,7 +132,7 @@ public class MySegmentTree<E> {
 
     public static void main(String[] args) {
         Integer[] nums = {-2, 0, 3, -5, 2, -1};
-        MySegmentTree<Integer> segTree = new MySegmentTree<>(nums, (a, b) -> a + b);
+        SegmentTree<Integer> segTree = new SegmentTree<>(nums, (a, b) -> a + b);
 
         System.out.println(segTree.getSize());
         System.out.println(segTree.get(0));

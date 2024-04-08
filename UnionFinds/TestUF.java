@@ -1,4 +1,4 @@
-package UnionFind;
+package UnionFinds;
 
 public class TestUF {
     public static void main(String[] args) {

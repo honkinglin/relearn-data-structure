@@ -1,4 +1,4 @@
-package AVLTree;
+package AVLTrees;
 
 import java.util.ArrayList;
 

@@ -1,12 +1,12 @@
 package SetAndMap;
 
-import LinkedList.MyLinkedList;
+import LinkedLists.LinkedList;
 
-public class MyLinkedListSet<E> {
-    private MyLinkedList<E> list;
+public class LinkedListSet<E> {
+    private LinkedList<E> list;
 
-    public MyLinkedListSet() {
-        list = new MyLinkedList<>();
+    public LinkedListSet() {
+        list = new LinkedList<>();
     }
 
     public int getSize() {

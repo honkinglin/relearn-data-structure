@@ -1,10 +1,10 @@
-package UnionFind;
+package UnionFinds;
 
-public class UnionFind4 implements UF {
+public class UnionFind5 implements UF {
     private int[] parent; // The parent of the element i is parent[i]
     private int[] rank; // rank[i] is the number of elements in the Collection of the element i
 
-    public UnionFind4(int size) {
+    public UnionFind5(int size) {
         parent = new int[size];
         rank = new int[size];
 
@@ -23,8 +23,10 @@ public class UnionFind4 implements UF {
         if (p < 0 || p >= parent.length)
             throw new IllegalArgumentException("p is out of bound.");
 
-        while (p != parent[p])
+        while (p != parent[p]) {
             p = parent[p];
+            parent[p] = parent[parent[p]]; // Path compression
+        }
 
         return p;
     }

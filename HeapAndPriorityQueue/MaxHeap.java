@@ -1,20 +1,20 @@
 package HeapAndPriorityQueue;
 
-import Arrays.MyArray;
+import Arrays.Array;
 
-public class MyMaxHeap<E extends Comparable<E>> {
-    private MyArray<E> data;
+public class MaxHeap<E extends Comparable<E>> {
+    private Array<E> data;
 
-    public MyMaxHeap(int capacity) {
-        data = new MyArray<>(capacity);
+    public MaxHeap(int capacity) {
+        data = new Array<>(capacity);
     }
 
-    public MyMaxHeap() {
-        data = new MyArray<>();
+    public MaxHeap() {
+        data = new Array<>();
     }
 
-    public MyMaxHeap(E[] arr) {
-        data = new MyArray<>(arr);
+    public MaxHeap(E[] arr) {
+        data = new Array<>(arr);
         // Heapify
         for (int i = parent(arr.length - 1); i >=0; i--)
             siftDown(i);
@@ -103,7 +103,7 @@ public class MyMaxHeap<E extends Comparable<E>> {
     public static void main(String[] args) {
         int n = 1000000;
 
-        MyMaxHeap<Integer> maxHeap = new MyMaxHeap<>();
+        MaxHeap<Integer> maxHeap = new MaxHeap<>();
         for (int i = 0; i < n; i++)
             maxHeap.add((int)(Math.random() * Integer.MAX_VALUE));
 

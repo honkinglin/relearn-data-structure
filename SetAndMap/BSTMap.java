@@ -1,8 +1,6 @@
 package SetAndMap;
 
-import BinarySearchTree.MyBST;
-
-public class MyBSTMap<K extends Comparable<K>, V> {
+public class BSTMap<K extends Comparable<K>, V> {
     private class Node {
         public K key;
         public V value;
@@ -19,7 +17,7 @@ public class MyBSTMap<K extends Comparable<K>, V> {
     private Node root;
     private int size;
 
-    public MyBSTMap() {
+    public BSTMap() {
         root = null;
         size = 0;
     }

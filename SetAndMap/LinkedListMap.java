@@ -1,6 +1,6 @@
 package SetAndMap;
 
-public class MyLinkedListMap<K, V> {
+public class LinkedListMap<K, V> {
     private class Node {
         public K key;
         public V value;
@@ -24,7 +24,7 @@ public class MyLinkedListMap<K, V> {
     private Node dummyHead;
     private int size;
 
-    public MyLinkedListMap() {
+    public LinkedListMap() {
         dummyHead = new Node();
         size = 0;
     }

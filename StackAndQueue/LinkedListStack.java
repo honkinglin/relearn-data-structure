@@ -1,12 +1,12 @@
 package StackAndQueue;
 
-import LinkedList.MyLinkedList;
+import LinkedLists.LinkedList;
 
-public class MyLinkedListStack<E> {
-    private MyLinkedList<E> list;
+public class LinkedListStack<E> {
+    private LinkedList<E> list;
 
-    public MyLinkedListStack() {
-        list = new MyLinkedList<>();
+    public LinkedListStack() {
+        list = new LinkedList<>();
     }
 
     public int getSize() {
@@ -40,7 +40,7 @@ public class MyLinkedListStack<E> {
     }
 
     public static void main(String[] args) {
-        MyLinkedListStack<Integer> stack = new MyLinkedListStack<>();
+        LinkedListStack<Integer> stack = new LinkedListStack<>();
         for (int i = 0; i < 5; i++) {
             stack.push(i);
             System.out.println(stack);

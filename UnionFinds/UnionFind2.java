@@ -1,17 +1,14 @@
-package UnionFind;
+package UnionFinds;
 
-public class UnionFind3 implements UF {
-    private int[] parent; // The parent of the element i is parent[i]
-    private int[] sz; // sz[i] is the number of elements in the Collection of the element i
+public class UnionFind2 implements UF {
+    // The parent of the element i is parent[i]
+    // The meaning of the parent[i] is the parent of the element i
+    private int[] parent;
 
-    public UnionFind3(int size) {
+    public UnionFind2(int size) {
         parent = new int[size];
-        sz = new int[size];
-
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++)
             parent[i] = i;
-            sz[i] = 1;
-        }
     }
 
     public int getSize() {
@@ -41,12 +38,6 @@ public class UnionFind3 implements UF {
         if (pRoot == qRoot)
             return;
 
-        if (sz[pRoot] < sz[qRoot]) {
-            parent[pRoot] = qRoot;
-            sz[qRoot] += sz[pRoot];
-        } else {
-            parent[qRoot] = pRoot;
-            sz[pRoot] += sz[qRoot];
-        }
+        parent[pRoot] = qRoot;
     }
 }

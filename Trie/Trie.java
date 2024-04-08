@@ -2,7 +2,7 @@ package Trie;
 
 import java.util.TreeMap;
 
-public class MyTrie {
+public class Trie {
     private class Node {
         public boolean isWord;
         public TreeMap<Character, Node> next;
@@ -20,7 +20,7 @@ public class MyTrie {
     private Node root;
     private int size;
 
-    public MyTrie() {
+    public Trie() {
         root = new Node();
         size = 0;
     }
@@ -103,7 +103,7 @@ public class MyTrie {
 
         // MyTrie test
         long startTime2 = System.nanoTime();
-        MyTrie trie = new MyTrie();
+        Trie trie = new Trie();
         for (String word : words) {
             trie.add(word);
         }
