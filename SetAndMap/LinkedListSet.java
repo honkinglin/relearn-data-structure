@@ -2,7 +2,7 @@ package SetAndMap;
 
 import LinkedLists.LinkedList;
 
-public class LinkedListSet<E> {
+public class LinkedListSet<E> implements Set<E> {
     private LinkedList<E> list;
 
     public LinkedListSet() {

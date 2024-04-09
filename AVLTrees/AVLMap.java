@@ -1,6 +1,8 @@
 package AVLTrees;
 
-public class AVLMap<K extends Comparable<K>, V> {
+import SetAndMap.Map;
+
+public class AVLMap<K extends Comparable<K>, V> implements Map<K, V> {
     private AVLTree<K, V> avl;
 
     public AVLMap() {

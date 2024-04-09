@@ -1,6 +1,8 @@
 package AVLTrees;
 
-public class AVLSet<E extends Comparable<E>> {
+import SetAndMap.Set;
+
+public class AVLSet<E extends Comparable<E>> implements Set<E> {
     private AVLTree<E, Object> avl;
 
     public AVLSet() {

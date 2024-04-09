@@ -1,6 +1,6 @@
 package SetAndMap;
 
-public class LinkedListMap<K, V> {
+public class LinkedListMap<K, V> implements Map<K, V> {
     private class Node {
         public K key;
         public V value;

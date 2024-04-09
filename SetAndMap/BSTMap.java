@@ -1,6 +1,6 @@
 package SetAndMap;
 
-public class BSTMap<K extends Comparable<K>, V> {
+public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
     private class Node {
         public K key;
         public V value;

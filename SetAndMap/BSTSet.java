@@ -2,7 +2,7 @@ package SetAndMap;
 
 import BinarySearchTree.BST;
 
-public class BSTSet<E extends Comparable<E>> {
+public class BSTSet<E extends Comparable<E>> implements Set<E> {
     private BST<E> bst;
 
     public BSTSet() {
