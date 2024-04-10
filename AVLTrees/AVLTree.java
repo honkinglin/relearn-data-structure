@@ -150,8 +150,8 @@ public class AVLTree<K extends Comparable<K>, V> {
 
         // Calculate the balance factor
         int balanceFactor = getBalanceFactor(node);
-        if (Math.abs(balanceFactor) > 1)
-            System.out.println("Unbalanced: " + balanceFactor);
+//        if (Math.abs(balanceFactor) > 1)
+//            System.out.println("Unbalanced: " + balanceFactor);
 
         // keep the balance of the tree
         // LL

@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        String filename = "pride-and-prejudice.txt";
+        String filename = "PrideAndPrejudice.txt";
 
         BSTSet<String> bstSet = new BSTSet<>();
         double time1 = testSet(bstSet, filename);
