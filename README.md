@@ -10,5 +10,5 @@
 - [x] Trie
 - [x] Union Find
 - [x] AVL Tree
-- Red Black Tree
-- Hash Table
+- [x] Red Black Tree
+- [x] Hash Table
