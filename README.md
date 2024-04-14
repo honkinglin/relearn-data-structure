@@ -2,7 +2,7 @@
 
 - [x] Arrays
 - [x] Stacks and Queues
-- [x] Linked Lists
+- [x] Linked List
 - [x] Binary Search Tree
 - [x] Set and Map
 - [x] Heap and Priority Queue
